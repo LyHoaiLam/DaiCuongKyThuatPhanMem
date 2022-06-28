@@ -1,0 +1,37 @@
+[
+    {
+        "name_Food": "Com Ga",
+        "amount_Food": 45,
+        "price_Food": 1898
+    },
+    {
+        "name_Food": "Hu Tieu Nam Vang",
+        "amount_Food": 4,
+        "price_Food": 56000.0
+    },
+    {
+        "name_Food": "Com Suon Sai Gon",
+        "amount_Food": 47,
+        "price_Food": 45000.0
+    },
+    {
+        "name_Food": "Hu Tieu Go",
+        "amount_Food": 450,
+        "price_Food": 520000.0
+    },
+    {
+        "name_Food": "Com Suong",
+        "amount_Food": 4,
+        "price_Food": 78000.0
+    },
+    {
+        "name_Food": "Com To",
+        "amount_Food": 4,
+        "price_Food": 78000.0
+    },
+    {
+        "name_Food": "Com Bi Cha",
+        "amount_Food": 4,
+        "price_Food": 472000.0
+    }
+]
