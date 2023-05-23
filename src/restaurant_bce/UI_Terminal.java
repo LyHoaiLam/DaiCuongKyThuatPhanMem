@@ -21,8 +21,7 @@ public class UI_Terminal
     public static String rep;
     public static String resCmd;
 
-    public static void main(String[] args) 
-    {
+    public static void main(String[] args) {
         System.out.println("********************************RESTAURANT*******************************");
         System.out.println("[1] Dau Bep");
         System.out.println("[2] Khach Hang");
@@ -32,32 +31,21 @@ public class UI_Terminal
         System.out.println();
         chon = scanner.nextInt();
         scanner.nextLine();
-        switch(chon)
-        {
-            case 1:
-            {
+        switch(chon){
+            case 1:{
                 DisPlay_DauBep(foods_Controller);
-                
-
             }break;
-            case 5:
-            {
+            case 5:{
                 break;
             }
         }
-
-        
-
-      
+ 
     }
 
 
-    public static void DisPlay_DauBep(Foods_Controller foods_Controller)
-    {
+    public static void DisPlay_DauBep(Foods_Controller foods_Controller){
         String luaChon;
-        do
-        {
-
+        do{
             System.out.println("************[Dau Bep]************");
             System.out.println("[AF] Them Moi Mon An Vao Danh Sach Mon An Phuc Trong Ngay");
             System.out.println("[RF] Xoa Mon An Phuc Vu Trong Ngay");
@@ -65,21 +53,17 @@ public class UI_Terminal
             {
                 rep = scanner.nextLine();
 
-            if(rep.toUpperCase().equals(Actions_Restaurant.AF.toString()))
-                {
+            if(rep.toUpperCase().equals(Actions_Restaurant.AF.toString())){
                     resCmd = foods_Boundary.handleCommands(rep);
                     System.out.println(resCmd);          
                     foods_Boundary.handleInput();
-                
                 }
-            if(rep.toUpperCase().equals(Actions_Restaurant.PF.toString()))
-                {
+            if(rep.toUpperCase().equals(Actions_Restaurant.PF.toString())){
                     resCmd = foods_Boundary.handleCommands(rep);
                     System.out.println(resCmd);
                     foods_Boundary.handlePrint();
                 }
-            if(rep.toUpperCase().equals(Actions_Restaurant.RF.toString()))
-                {
+            if(rep.toUpperCase().equals(Actions_Restaurant.RF.toString())){
                     resCmd = foods_Boundary.handleCommands(rep);
                     System.out.println(resCmd);
                     System.out.println("Vi Tri Can Xoa");
@@ -87,14 +71,11 @@ public class UI_Terminal
                     foods_Controller.RemoveFood(index);
                 }
             }
-
             System.out.println("[1] Su Dung Tiep");
             System.out.println("[0] Thoat Ra giao Dien Dau Bep");
             chon = scanner.nextInt();
             scanner.nextLine();
         }while(chon ==1);
-
-
 
     }
 

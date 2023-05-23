@@ -12,7 +12,7 @@ public class Test
             list_Student.Add_List(student);
             storedFileStudent.Write();
             storedFileStudent.Read();
-            //storedFileStudent.Print();
+            storedFileStudent.Print();
         }    
     }    
 }

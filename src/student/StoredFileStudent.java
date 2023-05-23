@@ -8,64 +8,43 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-public class StoredFileStudent 
-{
+public class StoredFileStudent {
     private String storedFile;
     private JsonArray memory;
     private List_Student list_Student;
 
     Gson gson = new Gson();
 
-
-    public  StoredFileStudent()
-    {
+    public  StoredFileStudent(){
 
     }
 
-
-    public StoredFileStudent(String storedFile, List_Student list_Student)
-    {
+    public StoredFileStudent(String storedFile, List_Student list_Student){
         this.storedFile = storedFile;
         this.list_Student = list_Student;
     }
 
-    public JsonArray getMemory() 
-    {
+    public JsonArray getMemory() {
         return memory;
     }
 
-
-    public void Write()
-    {
-        
-
-        try(FileWriter writer = new FileWriter(storedFile))
-        {
+    public void Write(){
+        try(FileWriter writer = new FileWriter(storedFile)){
             gson.toJson(this.list_Student, writer);
-            //Gson gson = new Gson();
-            
-        }
-        catch(Exception e)
-        {
+            //Gson gson = new Gson();           
+        }catch(Exception e){
             e.printStackTrace();
         }
-
     }
 
-
-    public void Print()
-    {
+    public void Print(){
         gson.toJson(list_Student);
         String line = gson.toJson(list_Student);
         System.out.println(line);   
     }
 
-
-
-    public void Update(String name, Integer age, Double mark)
-    {
-        JsonObject jsonObject = new JsonObject();
-        {
+    public void Update(String name, Integer age, Double mark){
+        JsonObject jsonObject = new JsonObject();{
             jsonObject.addProperty("name", name);
             jsonObject.addProperty("age", age);
             jsonObject.addProperty("mark", mark);
@@ -73,24 +52,16 @@ public class StoredFileStudent
         }
     }
 
-    
-
-
-    public JsonArray Read()
-    {
+    public JsonArray Read(){
         JsonArray jsonArray = null;
 
-        try(FileReader reader = new FileReader(storedFile))
-        {
+        try(FileReader reader = new FileReader(storedFile)){
             jsonArray = (JsonArray) JsonParser.parseReader(reader);
         }
-        catch(Exception e)
-        {
+        catch(Exception e){
             e.printStackTrace();
         }
-
         System.out.println(jsonArray.toString());
-
         return jsonArray;
     }
 
